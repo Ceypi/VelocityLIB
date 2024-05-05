@@ -1,5 +1,3 @@
-local RunService = game:GetService("RunService")
-
 -- settings (so u dont have to scroll)
 local settings = {
     folder_name = "Concert";
