@@ -5,7 +5,7 @@ local settings = {
 };
 
 local drawing = loadstring(game:HttpGet("https://raw.githubusercontent.com/Ceypi/VelocityLIB/987b4b47f1d987cb52ee5100a8f925381cc78577/Important/Dependencies/extension.lua"))();
-local tween = loadstring(game:HttpGet("https://raw.githubusercontent.com/Ceypi/VelocityLIB/987b4b47f1d987cb52ee5100a8f925381cc78577/Important/Dependencies/tween.lua"))() -- shhhh
+local tween = loadstring(game:HttpGet("https://raw.githubusercontent.com/Ceypi/VelocityLIB/a074e7ba73c05ebf034cd2bd476db12dd3ce6586/Important/Dependencies/tween.lua"))() -- shhhh
 local bxor = loadstring(game:HttpGet('https://raw.githubusercontent.com/Ceypi/VelocityLIB/987b4b47f1d987cb52ee5100a8f925381cc78577/Important/Dependencies/signal.lua'))()
 
 -- // UI LIBRARY
