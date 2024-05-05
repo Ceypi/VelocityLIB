@@ -1,6 +1,6 @@
 local library = loadstring(game:HttpGet("https://github.com/GhostDuckyy/UI-Libraries/blob/main/Velocity.vip/source.lua?raw=true"))() do --// ui main
     local ui = {} do
-        ui.window = library.init_window("Window", {size = Vector2.new(600, 420), name = "anis private cracked 2023 $$$ :troll:", drag_tween = true})
+        ui.window = library.init_window("Window", {size = Vector2.new(600, 420), name = "Concert", drag_tween = true})
         ui.pages = {} do
             ui.pages.aiming = ui.window.create_page(ui.window, {name = "Aiming"})
             ui.pages.players = ui.window.create_page(ui.window, {name = "Players"})
@@ -173,7 +173,7 @@ local library = loadstring(game:HttpGet("https://github.com/GhostDuckyy/UI-Libra
         end
     end
     
-    library.notify("anis private cracked injected, press END to toggle user interface")
+    library.notify("Concert has injected, press END to toggle user interface")
 end
 
 settings.TogglePreviewVisibility(true)
