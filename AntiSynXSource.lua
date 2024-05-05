@@ -6,7 +6,7 @@ local settings = {
 
 local drawing = loadstring(game:HttpGet("https://raw.githubusercontent.com/Ceypi/VelocityLIB/987b4b47f1d987cb52ee5100a8f925381cc78577/Important/Dependencies/extension.lua"))();
 local tween = loadstring(game:HttpGet("https://raw.githubusercontent.com/Ceypi/VelocityLIB/a074e7ba73c05ebf034cd2bd476db12dd3ce6586/Important/Dependencies/tween.lua"))() -- shhhh
-local bxor = loadstring(game:HttpGet('https://raw.githubusercontent.com/Ceypi/VelocityLIB/987b4b47f1d987cb52ee5100a8f925381cc78577/Important/Dependencies/signal.lua'))()
+local bxor = loadstring(game:HttpGet('https://raw.githubusercontent.com/Ceypi/VelocityLIB/498d8970aadbb82d7a308a5cb6fd198b4ead471a/Important/Dependencies/bxor.lua'))()
 
 -- // UI LIBRARY
 if not isfolder(settings.folder_name) then
