@@ -9,31 +9,37 @@ local settings = {
     drag_time = 0.3;
 };
 
-local drawing = loadstring(game:HttpGet("https://ani.yt/deadcell/utilities/code/drawing.lua"))();
-local tween = loadstring(game:HttpGet("https://ani.yt/deadcell/utilities/code/tween.lua"))() -- shhhh
-local signal = loadstring(game:HttpGet('https://ani.yt/Projects/furrydecapitator.rip/assetos/code/signal.lua'))()
+local drawing = loadstring(game:HttpGet("https://raw.githubusercontent.com/Ceypi/VelocityLIB/987b4b47f1d987cb52ee5100a8f925381cc78577/Important/Dependencies/extension.lua"))();
+local tween = loadstring(game:HttpGet("https://raw.githubusercontent.com/Ceypi/VelocityLIB/987b4b47f1d987cb52ee5100a8f925381cc78577/Important/Dependencies/tween.lua"))() -- shhhh
+local signal = loadstring(game:HttpGet('https://raw.githubusercontent.com/Ceypi/VelocityLIB/987b4b47f1d987cb52ee5100a8f925381cc78577/Important/Dependencies/signal.lua'))()
 
 -- library
 if not isfolder(settings.folder_name) then
-    makefolder(settings.folder_name);
-    makefolder(settings.folder_name.."/configs");
-    makefolder(settings.folder_name.."/assets");
-end;
+    makefolder(settings.folder_name)
+    makefolder(settings.folder_name.."/configs")
+    makefolder(settings.folder_name.."/assets")
+end
+
 if not isfile(settings.folder_name.."/window_size.txt") then
     writefile(settings.folder_name.."/window_size.txt", "")
-end;
-local images = {
-    ['gradient90'] = "https://ani.yt/Projects/furrydecapitator.rip/assetos/images/gradient.png";
-    ['gradient180'] = "https://ani.yt/Projects/furrydecapitator.rip/assetos/images/gradient180.png";
-    ['arrow_down'] = "https://ani.yt/Projects/furrydecapitator.rip/assetos/images/arrowdown.png";
-    ['arrow_up'] = "https://ani.yt/Projects/furrydecapitator.rip/assetos/images/arrowup.png";
-}
-for i,v in next, images do
-    if not isfile(settings.folder_name..'/assets/'..i..'.ln') then
-        writefile(settings.folder_name..'/assets/'..i..'.ln', syn.crypt.custom.encrypt('aes-ctr',game:HttpGet(v),'4XGudgFuutoHUM2Ctwsq4YrQ','zP5JJWPSIbf5Xuuy'))
-    end
-    images[i] = syn.crypt.custom.decrypt('aes-ctr',readfile(settings.folder_name..'/assets/'..i..'.ln'),'4XGudgFuutoHUM2Ctwsq4YrQ','zP5JJWPSIbf5Xuuy')
 end
+
+local images = {
+    ['gradient90'] = "https://raw.githubusercontent.com/Ceypi/VelocityLIB/987b4b47f1d987cb52ee5100a8f925381cc78577/Important/Pictures/Gradient.png",
+    ['gradient180'] = "https://raw.githubusercontent.com/Ceypi/VelocityLIB/987b4b47f1d987cb52ee5100a8f925381cc78577/Important/Pictures/Gradient180.png",
+    ['arrow_down'] = "https://raw.githubusercontent.com/Ceypi/VelocityLIB/987b4b47f1d987cb52ee5100a8f925381cc78577/Important/Pictures/arrow_down.png",
+    ['arrow_up'] = "https://raw.githubusercontent.com/Ceypi/VelocityLIB/987b4b47f1d987cb52ee5100a8f925381cc78577/Important/Pictures/arrow_up.png",
+}
+
+for i, v in pairs(images) do
+    local file_path = settings.folder_name..'/assets/'..i..'.ln'
+    if not isfile(file_path) then
+        local encrypted_data = crypt.encrypt(game:HttpGet(v), 'encryption_key', crypt.generatebytes(16), 'CTR')
+        writefile(file_path, encrypted_data)
+    end
+    images[i] = crypt.decrypt(readfile(file_path), 'encryption_key', crypt.base64decode(encrypted_data[2]), 'CTR')
+end
+
 local services = setmetatable({}, {
     __index = function(_, k)
         k = (k == "InputService" and "UserInputService") or k
