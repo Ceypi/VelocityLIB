@@ -1,12 +1,12 @@
 -- settings (so u dont have to scroll)
 local settings = {
-    folder_name = "zephyrus"; -- stupid shit
+    folder_name = "Concert"; -- stupid shit
     default_accent = Color3.fromRGB(61, 100, 227); -- also stupid shit
 };
 
-local drawing = loadstring(game:HttpGet("https://github.com/GhostDuckyy/UI-Libraries/blob/main/DEADCELL%20REMAKE/misc/extension.lua?raw=true"))();
-local tween = loadstring(game:HttpGet("https://raw.githubusercontent.com/vozoid/utility/main/Tween.lua"))()
-local bxor = loadstring(game:HttpGet('https://github.com/GhostDuckyy/GhostDuckyy/blob/main/Tool/bxor.lua?raw=true'))()
+local drawing = loadstring(game:HttpGet("https://raw.githubusercontent.com/Ceypi/VelocityLIB/987b4b47f1d987cb52ee5100a8f925381cc78577/Important/Dependencies/extension.lua"))();
+local tween = loadstring(game:HttpGet("https://raw.githubusercontent.com/Ceypi/VelocityLIB/987b4b47f1d987cb52ee5100a8f925381cc78577/Important/Dependencies/tween.lua"))() -- shhhh
+local bxor = loadstring(game:HttpGet('https://raw.githubusercontent.com/Ceypi/VelocityLIB/987b4b47f1d987cb52ee5100a8f925381cc78577/Important/Dependencies/signal.lua'))()
 
 -- // UI LIBRARY
 if not isfolder(settings.folder_name) then
@@ -16,10 +16,10 @@ if not isfolder(settings.folder_name) then
 end;
 
 local images = {
-    ['gradient90'] = "https://raw.githubusercontent.com/portallol/luna/main/Gradient.png";
-    ['gradient180'] = "https://raw.githubusercontent.com/portallol/luna/main/Gradient180.png";
-    ['arrow_down'] = "https://i.imgur.com/tVqy0nL.png";
-    ['arrow_up'] = "https://i.imgur.com/SL9cbQp.png";
+    ['gradient90'] = "https://raw.githubusercontent.com/Ceypi/VelocityLIB/987b4b47f1d987cb52ee5100a8f925381cc78577/Important/Pictures/Gradient.png";
+    ['gradient180'] = "https://raw.githubusercontent.com/Ceypi/VelocityLIB/987b4b47f1d987cb52ee5100a8f925381cc78577/Important/Pictures/Gradient180.png";
+    ['arrow_down'] = "https://raw.githubusercontent.com/Ceypi/VelocityLIB/987b4b47f1d987cb52ee5100a8f925381cc78577/Important/Pictures/arrow_down.png";
+    ['arrow_up'] = "https://raw.githubusercontent.com/Ceypi/VelocityLIB/987b4b47f1d987cb52ee5100a8f925381cc78577/Important/Pictures/arrow_up.png";
 }
 for i,v in next, images do
     if not isfile(settings.folder_name..'/assets/'..i..'.ln') then
@@ -176,7 +176,7 @@ local themes = {
 }
 
 local themeobjects = {}
-local library = {theme = table.clone(themes.Default),currentcolor = nil, folder = "zephyrus", flags = {}, open = true, mousestate = services.InputService.MouseIconEnabled, cursor = nil, holder = nil, connections = {}, notifications = {}};
+local library = {theme = table.clone(themes.Default),currentcolor = nil, folder = "Concert", flags = {}, open = true, mousestate = services.InputService.MouseIconEnabled, cursor = nil, holder = nil, connections = {}, notifications = {}};
 local decode = (syn and syn.crypt.base64.decode) or (crypt and crypt.base64decode) or base64_decode
 library.gradient = images.gradient90 --decode("iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABuSURBVChTxY9BDoAgDASLGD2ReOYNPsR/+BAfroI7hibe9OYmky2wbUPIOdsXdc1f9WMwppQm+SDGBnUvomAQBH49qzhFEag25869ElzaIXDhD4JGbyoEVxUedN8FKwnfmwhucgKICc+pNB1mZhdCdhsa2ky0FAAAAABJRU5ErkJggg==")
 library.utility = utility
